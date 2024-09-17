@@ -25,7 +25,8 @@ class Subject:
         """
         if self.count_grades() < 4:
             self._grades.append(grade)
-        raise OverflowError
+        else:
+            raise OverflowError
 
     def take_grade(self, index):
         """

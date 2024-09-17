@@ -23,7 +23,7 @@ class StudentReport:
 
         # List all subjects with the average mark.
         for subject in self._subjects:
-            output += f'\n\t  {subject.name}:  {subject.average}'
+            output += f'\n\t  {subject.name:<10}:  {subject.average:.2f}'
         return output
 
     def show_details(self):
@@ -34,11 +34,11 @@ class StudentReport:
         """
         output = ''
         for subject in self._subjects:
-            output += f'\tFach: {subject.name} mit {subject.count_grades()} Noten'
+            output += f'Fach: {subject.name:<10} mit {subject.count_grades()} Noten\n'
             for count in range(subject.count_grades()):
                 grade = subject.take_grade(count)
-                output += f'\t\t{count + 1} : {grade.value} {grade.date}'
-            output += f'\tSchnitt: {subject.average}\n'
+                output += f' - {count + 1}: {grade.value:.2f} am {grade.date:%d.%m.%Y}\n'
+            output += f' Schnitt: {subject.average:.2f}\n'
         return output
 
     def add_subject(self, subject):

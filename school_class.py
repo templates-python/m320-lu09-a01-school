@@ -65,7 +65,8 @@ class SchoolClass:
         print('----')
         for student in self._students:
             if student.name == name:
-                return student.show_report()
+                return student.report.show_overview()
+        return f'Student {name} nicht gefunden'
 
     @property
     def designation(self):

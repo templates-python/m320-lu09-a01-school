@@ -63,10 +63,10 @@ def main():
     report_cem.take_subject(2).add_grade(Grade(6.0, '8.8.88'))
     report_cem.take_subject(2).add_grade(Grade(5.5, '9.9.99'))
 
-    the_class.show_student_report('Max')
-    the_class.show_student_report('Pia')
-    the_class.show_student_report('Cem')
-    the_class.show_student_report('Theo')
+    print(the_class.show_student_report('Moritz'))
+    print(the_class.show_student_report('Pia'))
+    print(the_class.show_student_report('Cem'))
+    print(the_class.show_student_report('Theo'))
 
     # Finally we show the detailed report for one student
 
