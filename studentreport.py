@@ -1,0 +1,2 @@
+class StudentReport:
+    pass

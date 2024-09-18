@@ -14,6 +14,10 @@ def test_grade_init_valid(some_date):
     """ tests the constructor with valid data """
     grade = Grade(4.0, some_date)
     assert grade.value == 4.0
+    grade = Grade(1.0, some_date)
+    assert grade.value == 1.0
+    grade = Grade(6.0, some_date)
+    assert grade.value == 6.0
 
 
 def test_grade_init_invalid(some_date):
