@@ -27,20 +27,24 @@ class Grade:
         if self._value > 6.0 or self._value < 1.0:
             raise ValueError
 
+
     @property
     def value(self):
         """ returns the value for this grade"""
         return self._value
+
 
     @value.setter
     def value(self, value):
         """ sets the value for this grade """
         self._value = value
 
+
     @property
     def date(self):
         """ returns the date of this grade """
         return self._date
+
 
     @date.setter
     def date(self, value):
@@ -53,6 +57,6 @@ class Grade:
         if isinstance(value, datetime):
             self._date = value
         elif isinstance(value, str) and value != '':
-            self._date = datetime.strptime(value,'%d.%m.%y')
+            self._date = datetime.strptime(value, '%d.%m.%y')
         else:
             self._date = datetime.now()

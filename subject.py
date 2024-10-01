@@ -1,6 +1,5 @@
 """ Provides the Subject-class """
 
-
 class Subject:
     """
     A school subject for the grade report of one student
