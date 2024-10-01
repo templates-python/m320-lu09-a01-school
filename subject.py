@@ -1,4 +1,11 @@
 """ Provides the Subject-class """
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from grade import Grade
+
 
 class Subject:
     """
@@ -16,7 +23,7 @@ class Subject:
         self._name = name
         self._grades = []
 
-    def add_grade(self, grade):
+    def add_grade(self, grade: Grade) -> None:
         """
         adds a grade to the grades list
         :param: grade(Grade) the grade-object to add
@@ -27,7 +34,7 @@ class Subject:
         else:
             raise OverflowError
 
-    def take_grade(self, index):
+    def take_grade(self, index: int) -> Grade:
         """
         returns the grade identified by the index
         :param: index(int):  the index of the grade
@@ -37,7 +44,7 @@ class Subject:
             return self._grades[index]
         raise IndexError
 
-    def count_grades(self):
+    def count_grades(self) -> int:
         """
         counts the number of grades in the list
         :return: size of the list(int)
@@ -45,7 +52,7 @@ class Subject:
         return len(self._grades)
 
     @property
-    def average(self):
+    def average(self) -> float:
         """
         calculates the average of all grades in the list or 0 if the grades-list ist empty
         :return: average grade(float)
@@ -59,6 +66,6 @@ class Subject:
             return total / self.count_grades()
 
     @property
-    def name(self):
+    def name(self) -> str:
         """ returns the name """
         return self._name

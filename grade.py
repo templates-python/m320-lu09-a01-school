@@ -19,7 +19,7 @@ class Grade:
     value: float = -1.0
     date: datetime = None
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         """
         validates the initial value
         :raises: ValueError: if the value is out of bounds
@@ -29,25 +29,25 @@ class Grade:
 
 
     @property
-    def value(self):
+    def value(self) -> float:
         """ returns the value for this grade"""
         return self._value
 
 
     @value.setter
-    def value(self, value):
+    def value(self, value: float) -> None:
         """ sets the value for this grade """
         self._value = value
 
 
     @property
-    def date(self):
+    def date(self) -> datetime:
         """ returns the date of this grade """
         return self._date
 
 
     @date.setter
-    def date(self, value):
+    def date(self, value: datetime|str) -> None:
         """
         sets the date of this grade.
         If a string "(d)d.(m)m.(yy)yy" is provided, it converts it to DateTime

@@ -1,16 +1,26 @@
 """ Provides the StudentReport-class """
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from student import Student
+    from subject import Subject
+
+
 class StudentReport:
     """
     The grade reports for a student with the subjects and grades
     """
-    def __init__(self):
+
+    def __init__(self) -> None:
         """
         initializes the student report with empty attributs
         """
         self._subjects = []
         self._student = None
 
-    def show_overview(self):
+    def show_overview(self) -> str:
         """
         shows an overview of all subjects and average marks for the student.
 
@@ -26,7 +36,7 @@ class StudentReport:
             output += f'\n\t  {subject.name:<10}:  {subject.average:.2f}'
         return output
 
-    def show_details(self):
+    def show_details(self) -> str:
         """
         shows the details of all subjects and marks for the student.
 
@@ -41,7 +51,7 @@ class StudentReport:
             output += f' Schnitt: {subject.average:.2f}\n'
         return output
 
-    def add_subject(self, subject):
+    def add_subject(self, subject: Subject) -> None:
         """
         adds a subject to the list, if there are less than 3 subjects in the list
 
@@ -53,7 +63,7 @@ class StudentReport:
         else:
             raise OverflowError
 
-    def take_subject(self, index):
+    def take_subject(self, index: int) -> Subject:
         """
         returns the subject at the specified index, if it exists.
 
@@ -65,7 +75,7 @@ class StudentReport:
             return self._subjects[index]
         raise IndexError
 
-    def count_subjects(self):
+    def count_subjects(self) -> int:
         """
         counts the number of subjects in the list
 
@@ -74,11 +84,11 @@ class StudentReport:
         return len(self._subjects)
 
     @property
-    def student(self):
+    def student(self) -> Student:
         """ returns the student-object """
         return self._student
 
     @student.setter
-    def student(self, value):
+    def student(self, value: Student):
         """ Sets the student-object """
         self._student = value
