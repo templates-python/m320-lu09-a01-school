@@ -5,16 +5,19 @@ from studentreport import StudentReport
 
 @pytest.fixture
 def subject_list():
+    """ returns a list of subjects """
     return ['English', 'Math', 'History']
 
 
 @pytest.fixture
 def report_empty():
+    """ returns an empty report """
     return StudentReport()
 
 
 @pytest.fixture
 def report_max_subjects(report_empty: StudentReport, subject_list):
+    """ returns a report with the maximum number of subjects """
     for subject in subject_list:
         report_empty.add_subject(subject)
     return report_empty

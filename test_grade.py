@@ -7,6 +7,7 @@ from grade import Grade
 
 @pytest.fixture
 def some_date():
+    """ returns a date """
     return datetime(2024, 8, 28)
 
 

@@ -23,16 +23,16 @@ def test_school_class_init(a_class):
 
 def test_single_student_added(a_class, a_report):
     """ tests adding a single student """
-    max = Student("Max", a_report)
-    a_class.add_student(max)
-    assert a_class.take_student(0) is max
-    assert max.school_class is a_class
+    peter = Student("Peter", a_report)
+    a_class.add_student(peter)
+    assert a_class.take_student(0) is peter
+    assert peter.school_class is a_class
 
 
 def test_take_invalid_student(a_class, a_report):
     """ tests adding a single student """
-    max = Student("Max", a_report)
-    a_class.add_student(max)
+    peter = Student("Peter", a_report)
+    a_class.add_student(peter)
     with pytest.raises(IndexError):
         a_class.take_student(3)
 

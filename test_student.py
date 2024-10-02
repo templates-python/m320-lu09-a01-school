@@ -7,16 +7,19 @@ from subject import Subject
 
 @pytest.fixture
 def student_report():
+    """ returns a student report """
     return StudentReport()
 
 
 @pytest.fixture
 def mia(student_report):
+    """ returns a student """
     return Student('Mia', student_report)
 
 
 @pytest.fixture
 def mathe():
+    """ returns the subject 'Mathe' """
     return Subject('Mathe')
 
 def test_initialisation(mia, student_report):
