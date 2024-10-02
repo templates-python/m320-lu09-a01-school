@@ -29,6 +29,7 @@ class SchoolClass:
         """
         if self.count_students() < 20:
             self._students.append(student)
+            student.school_class = self
         else:
             raise OverflowError
 

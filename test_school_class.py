@@ -26,6 +26,7 @@ def test_single_student_added(a_class, a_report):
     max = Student("Max", a_report)
     a_class.add_student(max)
     assert a_class.take_student(0) is max
+    assert max.school_class is a_class
 
 
 def test_take_invalid_student(a_class, a_report):
