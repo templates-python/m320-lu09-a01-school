@@ -27,13 +27,13 @@ def test_grade_init_invalid(some_date):
         Grade('a', some_date)
 
 
-def test_grade_init_too_small():
+def test_grade_init_too_small(some_date):
     """ tests the constructor with an illegal grade """
     with pytest.raises(ValueError):
-        Grade(0.5)
+        Grade(0.5,some_date)
 
 
-def test_grade_init_too_high():
+def test_grade_init_too_high(some_date):
     """ tests the constructor with an illegal grade """
     with pytest.raises(ValueError):
-        Grade(7.0)
+        Grade(7.0,some_date)
