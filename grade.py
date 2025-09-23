@@ -1,6 +1,6 @@
 from datetime import date, datetime
 
-
+# DAS IST EINE @DATACLASS
 class Grade:
     @date.setter
     def date(self, value):
